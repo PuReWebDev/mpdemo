@@ -1,0 +1,8 @@
+Major updates
+ - Began integration of live templating tools allowing content creators to view
+ changes live
+ - Add Netlify CMS configurations for content creation.
+ - Add dynamic content fields for conent create (dynamic sliders, paragraphs)
+ - Add Static queries for site meta (location, seo, site title)
+ - Add dynamic content to react components
+ - began work on asset sourcing from netlify (setting up asset management)
