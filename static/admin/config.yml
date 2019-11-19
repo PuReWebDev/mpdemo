@@ -1,13 +1,8 @@
-#Development
 backend:
-  name: github
-  repo: PuReWebDev/mpdemo
-  branch: master
-#backend:
-#  name: git-gateway
-#  accept_roles: #optional - accepts all users if left out
-#    - admin
-#    - editor
+  name: git-gateway
+  accept_roles: #optional - accepts all users if left out
+    - admin
+    - editor
 
 media_folder: uploads/img
 media_folder_relative: true
