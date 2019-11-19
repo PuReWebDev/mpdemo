@@ -18,7 +18,7 @@ header_slide:
     header_link: support with experience
     header_link_key: third_panel
   - header_image: 'https://www.matrixpartners.com/wp-content/uploads/2017/02/cloudbees@2x.jpg'
-    header_link: amplify intrinsic talent test
+    header_link: amplify intrinsic talent test demo
     header_link_key: fourth_panel
 footer_slide:
   - footer_color: '#292828'
