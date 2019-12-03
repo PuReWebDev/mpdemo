@@ -3,111 +3,200 @@ import React, { useState } from "react"
 import { Heading, SEO } from "../components"
 import Layout from "../components/layout"
 import { StaticQuery, graphql } from "gatsby"
-import { Fade } from 'react-reveal'
-import classnames from 'classnames';
-import { ParallaxSingle } from '../components/parallax'
+import { Fade } from "react-reveal"
+import classnames from "classnames"
+import { ParallaxSingle } from "../components/parallax"
 //import { RenderMarkdown } from "../core"
+import ReactCardFlip from "react-card-flip"
 import {
   safelyGetFrontMatter,
-  withFallback,
-  CMS_SCOPE,
-  CMS_COMPONENTS,
 } from "../cms"
-import { TabContent, TabPane, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import {
+  TabContent,
+  TabPane,
+  NavLink,
+  Card,
+  Button,
+  Row,
+  Col,
+} from "reactstrap"
 
-export const PortfolioPageTemplate = (props) => {
-  console.log("Knocking out the portfolio page" , props)
+/**
+ * Portfolio page template
+ * @param {object} props
+ */
+export const PortfolioPageTemplate = props => {
+  console.log("Knocking out the portfolio page", props)
 
-  //Default to the first one that comes in from the props
+  /**@var {string} menuItem current menu item */
   const [menuItem, updateMenuItem] = useState(props.panel[0].menu_key)
-  //Toggling description view
+  /**@var {integer} descriptionView Current card flipped */
   const [descriptionView, updateDescriptionView] = useState(false)
-  //Images per menuItem
-  const [images, fillImages] = useState([])
+  /**@var {integer} colorIndex current color */
+  let colorIndex = 1
 
+  /**
+   * Updates the active tab
+   * @param {string} tab
+   * @return {void}
+   */
   const toggle = tab => {
-      console.log("current tab: new tab",menuItem, tab)
-      updateMenuItem(tab)
+    updateMenuItem(tab)
   }
 
-  const flipCard = (tab) => {
-    if(descriptionView === tab) {
+  /**
+   * Check if card should be flipped.
+   * @param {integer} cardId
+   * @return {boolean}
+   */
+  const isFliped = cardId => {
+    if (descriptionView === cardId) return true
+    return false
+  }
+
+  /**
+   * Return panel links
+   * @param {object} panels
+   * @return {JSX}
+   */
+  const generatePanelMap = panels => {
+    return panels.map(pan => {
+      return (
+        <NavLink
+          className={classnames({ active: menuItem === pan.menu_key })}
+          style={{ display: "inline-block" }}
+          onClick={() => {
+            toggle(pan.menu_key)
+          }}
+        >
+          {pan.panel_title}
+        </NavLink>
+      )
+    })
+  }
+
+  /**
+   * Return current looped color
+   * @return {integer} colorIndex
+   */
+  function getColorIndex() {
+    colorIndex + 1 > 5 ? (colorIndex = 1) : ++colorIndex
+    return colorIndex
+  }
+
+  /**
+   * Render page header
+   * @return {JSX}
+   */
+  function renderTabHeader() {
+    return (
+      <div className="image-text-container">
+          <img className="grayscale" src="https://www.matrixpartners.com/wp-content/uploads/2017/11/contact-header-compressed.jpg" />
+          <div className="image-text-centered">
+            <h1 style={{ opacity: 1, color: "white" }}>{props.title}</h1>
+            {generatePanelMap(props.panel)}
+          </div>
+      </div>
+    )
+  }
+
+    /**
+   * Update or cancel card flip state
+   * @param {integer} cardId
+   * @return {void}
+   */
+  function flipCard(cardId) {
+    if (descriptionView === cardId) {
       updateDescriptionView(false)
     } else {
-      updateDescriptionView(tab)
+      updateDescriptionView(cardId)
     }
   }
 
-  function renderTabHeader(){
-    return (
-        <Fade>
-    <div className="h-50-header h-50-grayscale h-50 w-100 d-inline-block">
-    <div style={{filter: 'none'}}>
-    <h1 className="overlay-text" style={{opacity: 1, color: 'white'}}>{props.title}</h1>
-    {props.panel.map(pan => {
-      console.log("hold up pan",pan)
-      return(
-        <NavLink
-        className={classnames({ active: menuItem === pan.menu_key })}
-        style={{display: 'inline-block'}}
-        onClick={() => { toggle(pan.menu_key); }}
-      >
-        {pan.panel_title}
-      </NavLink>
-      )
-    })}
-    </div>
-</div></Fade>)
-}
-
-function renderTab() {
-  console.log("descriptionView?" , descriptionView)
-  return props.panel.map(pan => {
-    let colorIndex = 1
-    console.log("renderTab" , pan)
-    return(
-      <TabPane tabId={pan.menu_key}>
-      <Row>
-          { pan.panel_images.map(pimage => {
-              if((colorIndex + 1) > 5) {
-                  colorIndex = 1
-              } else {
-                  ++colorIndex
-              }
-              return(
-                  <Col sm="3" style={{padding: 0}}>
+  /**
+   * Render all panels and cards
+   * @return {JSX}
+   */
+  function renderTab() {
+    return props.panel.map(pan => {
+      return (
+        <TabPane tabId={pan.menu_key}>
+          <Row>
+            {pan.panel_images.map((pimage, j) => {
+              return (
+                <Col sm="3" style={{ padding: 0 }}>
                   <Fade>
-                  <Card className={`fast-transition panel-card panel-${colorIndex}`} body>
-                    <img height={60} width={60} src={pimage.panel_image} />
-                  </Card>
+                    <Card
+                      onClick={() => flipCard(j)}
+                      className={`${
+                        isFliped(j) ? "bg-white" : ""
+                      } fast-transition panel-card ${
+                        !isFliped(j) ? `panel-${getColorIndex()}` : ""
+                      }`}
+                      body
+                    >
+                      <ReactCardFlip
+                        isFlipped={isFliped(j)}
+                        flipDirection="horizontal"
+                      >
+                        <div>
+                          <img
+                            height={60}
+                            width={60}
+                            src={pimage.panel_image}
+                          />
+                        </div>
+                        <div className="block">
+                          <img
+                            style={{ top: 0 }}
+                            height={70}
+                            width={100}
+                            className="img-thumbnail"
+                            src={pimage.panel_image_alt}
+                          />
+                          <p>{pimage.panel_description}</p>
+                          <Button onClick={e => console.log("clicked")}>
+                            Visit Website
+                          </Button>
+                        </div>
+                      </ReactCardFlip>
+                    </Card>
                   </Fade>
                 </Col>
               )
-          })}
-        </Row>
-      </TabPane>
-    )
-  })
-}
-
+            })}
+          </Row>
+        </TabPane>
+      )
+    })
+  }
+  /**
+   * Entry point
+   * @return {JSX}
+   */
   return (
-  <article>
-    <SEO title="Portfolio Page" />
+    <article>
+      <SEO title="Portfolio Page" />
       <Layout location={`portfolio`}>
         <SEO
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         {renderTabHeader()}
-       <TabContent style={{backgroundColor: 'black'}} activeTab={menuItem}>
-        {renderTab()}
-      </TabContent>
+        <TabContent style={{ backgroundColor: "black" }} activeTab={menuItem}>
+          {renderTab()}
+        </TabContent>
       </Layout>
-  </article>
+    </article>
   )
 }
 
-const PortfolioPage = (props) => {
+/**
+ * Render page with template
+ * @param {object} props
+ * @return {JSX}
+ */
+const PortfolioPage = props => {
   return (
     <PortfolioPageTemplate
       {...safelyGetFrontMatter(props.pageContext)}

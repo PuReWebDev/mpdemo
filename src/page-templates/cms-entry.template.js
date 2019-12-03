@@ -1,8 +1,10 @@
 import React from "react"
 
 import HomePage from "./home-page.template"
-import ContactPage from './contact-page.template'
-import PortfolioPage from './portfolio-page.template'
+import ContactPage from "./contact-page.template"
+import PortfolioPage from "./portfolio-page.template"
+import TeamPage from './team-page.template'
+import AboutPage from './about-page.template'
 import DefaultPage from "./default-page.template"
 import NotFoundPage from "./not-found.template"
 import { AppLayout } from "../app-layout.component"
@@ -15,9 +17,10 @@ const componentTemplateMap = {
   "home-page": HomePage,
   "contact-page": ContactPage,
   "portfolio-page": PortfolioPage,
+  "team-page": TeamPage,
+  "about-page": AboutPage,
   "hidden-page": NotFoundPage,
 }
-
 
 const CMSTemplate = props => {
   const { pageContext } = props

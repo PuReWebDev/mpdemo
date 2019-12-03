@@ -8,72 +8,68 @@ import {
   CMS_SCOPE,
   CMS_COMPONENTS,
 } from "../cms"
-import { Slider, SliderContent } from '../components'
+import { Slider, SliderContent } from "../components"
 import Layout from "../components/layout"
 //import { Link } from "gatsby"
-import { Row, Container } from 'reactstrap'
-import { Fade } from 'react-reveal'
+import { Row, Container } from "reactstrap"
+import { Fade } from "react-reveal"
 
-export const HomePageTemplate = (props) => {
-
+export const HomePageTemplate = props => {
   function renderContentPanel() {
-    console.log("panel" , props)
-        return props.panel_content.map(panel => (
-          <p>{panel.panel_content_link}</p>
-        ))
+    console.log("panel", props)
+    return props.panel_content.map(panel => <p>{panel.panel_content_link}</p>)
   }
 
-  function renderSlides() { 
-      return props.header_slide.map(hslide => hslide.header_image)
+  function renderSlides() {
+    return props.header_slide.map(hslide => hslide.header_image)
   }
 
   function renderSliderMenu() {
-      return props.header_slide.map(hslide => {
-          return {
-            header_link: hslide.header_link,
-            header_link_key: hslide.header_link_key
-          }
-      })
+    return props.header_slide.map(hslide => {
+      return {
+        header_link: hslide.header_link,
+        header_link_key: hslide.header_link_key,
+      }
+    })
   }
 
   function footerContent() {
-       const { footer_slide } = props
-       return footer_slide.map(fslide => fslide)
+    const { footer_slide } = props
+    return footer_slide.map(fslide => fslide)
   }
 
-  
   return (
-  <article style={{width: '100%'}}>
-    <SEO title="Home Page" />
-    <Container fluid className="padding-none margin-none">
-    <Fade>
-    <Slider subMenu={renderSliderMenu()} fullScreen={true} images={renderSlides()}  />
-      </Fade>
-      <Fade ssrFadeout>
-        <Row className="full-outer-text">
-          <h2
-          className="full-inner-text"
-        >
-          {props.content_section_one}
-          </h2>
-        </Row>
+    <article style={{ width: "100%" }}>
+      <SEO title="Home Page" />
+      <Container fluid className="padding-none margin-none">
+        <Fade>
+          <Slider
+            subMenu={renderSliderMenu()}
+            fullScreen={true}
+            images={renderSlides()}
+          />
         </Fade>
         <Fade ssrFadeout>
-        <div className="text-center" style={{ padding: '10% 0' }}>
-             {renderContentPanel()}
-        </div>
+          <Row className="full-outer-text">
+            <h2 className="full-inner-text">{props.content_section_one}</h2>
+          </Row>
         </Fade>
-      <SliderContent
+        <Fade ssrFadeout>
+          <div className="text-center" style={{ padding: "10% 0" }}>
+            {renderContentPanel()}
+          </div>
+        </Fade>
+        <SliderContent
           content={footerContent()}
           parallax={false}
           hasArrows={true}
-      />
-    </Container>
-  </article>
+        />
+      </Container>
+    </article>
   )
 }
 
-const HomePage = (props) => {
+const HomePage = props => {
   return (
     <HomePageTemplate
       {...safelyGetFrontMatter(props.pageContext)}

@@ -5,8 +5,7 @@ panel:
   - menu_key: recent
     panel_images:
       - panel_description: Test Description
-        panel_image: >-
-          https://www.matrixpartners.com/wp-content/uploads/2017/06/Acacia_light@2x.png
+        panel_image: /public/image/acacia_light-2x.png
         panel_image_alt: >-
           https://www.matrixpartners.com/wp-content/uploads/2017/06/Acacia_dark@2x.png
       - panel_description: Test description
@@ -19,7 +18,10 @@ panel:
           https://www.matrixpartners.com/wp-content/uploads/2018/12/canopy-logo-white-500px.png
         panel_image_alt: >-
           https://www.matrixpartners.com/wp-content/uploads/2018/12/canopy-logo-black-500px.png
-      - panel_description: Test Description
+      - panel_description: >-
+          Swine kevin short loin pastrami salami pancetta frankfurter. Pig
+          turkey boudin porchetta. Pork chop bresaola boudin, shankle turkey
+          rump sirloin
         panel_image: 'https://www.matrixpartners.com/wp-content/uploads/2017/07/Canva_wt.png'
         panel_image_alt: 'https://www.matrixpartners.com/wp-content/uploads/2017/07/Canva_bk.png'
       - panel_description: Test description

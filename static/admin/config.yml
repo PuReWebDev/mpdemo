@@ -1,16 +1,24 @@
 backend:
-  name: git-gateway
-  accept_roles: #optional - accepts all users if left out
-    - admin
-    - editor
+  name: github
+  repo: PuReWebDev/mpdemo # Path to your GitHub repository
+#backend:
+#  name: git-gateway
+#  accept_roles: #optional - accepts all users if left out
+#    - admin
+#    - editor
 
-media_folder: uploads/img
+media_folder: /public/image
 media_folder_relative: true
-public_folder: /img
+public_folder: /public/image
+site_url: localhost:8000
 
 collections:
 - name: "mainPages"
   label: "Main Pages and Settings"
+  media_library:
+    config:
+      multiple: true
+
   create: false
   files:
   - file: "src/pages/index.md"
@@ -44,13 +52,13 @@ collections:
       fields:
         - {label: Header Link, name: header_link, widget: string, default: "Panel Link"}
         - {label: Header Link Key, name: header_link_key, widget: string}
-        - {label: Header Image URL, name: header_image, widget: string}
+        - {label: Header Image, name: header_image, widget: image}
     - label: "Footer Slide"
       name: "footer_slide"
       widget: "list"
       fields:
-        - {label: Footer Logo URL, name: footer_logo, widget: string}
-        - {label: Footer Image URL, name: footer_image, widget: string}
+        - {label: Footer Logo, name: footer_logo, widget: image}
+        - {label: Footer Image, name: footer_image, widget: image}
         - {label: Footer Content, name: footer_content, widget: markdown}
         - {label: Footer Color, name: footer_color, widget: string}
         - {label: Signature, name: footer_signature, widget: string}    
@@ -76,6 +84,31 @@ collections:
           { label: URL, name: url, widget: string },
           ]
       }
+- name: "about"
+  label: "About Us"
+  identifier_field: title
+  files:
+  - file: "src/pages/about/index.md"
+    label: "About Us Page"
+    name: "about_us"
+    fields:
+      - { label: "Template Key", name: "templateKey",widget: "hidden", default: "about-page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Signature", name: "signature_widget", widget: "string" }
+      - { label: "Left Panel Title", name: "left_panel_title", widget: "string" }
+      - { label: "Left Panel Content", name: "left_panel_content", widget: "string" }
+      - label: "Right Panel Row"
+        name: "right_panel_row"
+        widget: "list"
+        fields:
+          - label: "Right Panel Stats"
+            name: "right_panel_stats"
+            widget: "list"
+            fields: 
+                - { label: "Panel Number", name: "panel_number", valueType: "int", min: 1, step: 1 }
+                - { label: "Panel Label" , name: "panel_label", widget: "string" }
+                - { label: "Green Plus", name: "green_plus", widget: "boolean", default: false }
 - name: "content"
   label: "Content Pages"
   folder: "src/pages/content"
@@ -112,8 +145,8 @@ collections:
           name: "panel_images"
           widget: "list"
           fields:
-          - {label: Panel Image URL, name: panel_image, widget: string}
-          - {label: Panel Alt URL, name: panel_image_alt, widget: string}
+          - {label: Panel Image, name: panel_image, widget: image}
+          - {label: Panel Alt, name: panel_image_alt, widget: image}
           - {label: Panel Description, name: panel_description, widget: string}
 - name: "team"
   label: "Team"
@@ -145,7 +178,7 @@ collections:
           widget: "list"
           fields:
           - {label: Team Members Name, name: team_member_name, widget: string, default: "John Doe"}
-          - {label: Team Member Image URL, name: team_member_image, widget: string}
+          - {label: Team Member Image, name: team_member_image, widget: image}
 - name: "contact"
   label: "Contact"
   identifier_field: title
@@ -163,17 +196,17 @@ collections:
     - label: "Title"
       name: "title"
       widget: "string"
+    - label: "Sub Title"
+      name: "sub_title"
+      widget: "string"
     - label: "Contact Panel"
       name: "contact_panel"
       widget: "list"
       fields: 
-          - {label: Key, name: key, widget: string, default: "default_key"}
-          - {label: Panel Image, name: panel_image, widget: image, default: "/img/gamecap.jpg"}   
+          - {label: Panel Image, name: panel_image, widget: image }   
           - {label: Title, name: title, widget: string, default: "Default Title"}
-          - {label: Key, name: key, widget: string, default: "default_key"}
           - {label: Display Address, name: display_address, widget: string, default: "535 Mission St. Suite 2600 San Francisco, CA 94105"}
           - {label: Phone Number, name: phone_number, widget: string, default: "default_key"}
           - {label: Email, name: email, widget: string, default: "email@default.com"}
           - {label: Directions Link, name: directions_link, widget: string, default: "https://www.google.com/maps/place/535+Mission+St+%232600,+San+Francisco,+CA+94105/@37.7888907,-122.400289,17z/data=!3m1!4b1!4m5!3m4!1s0x8085806325b00825:0x7808b0fc4ef4d3a6!8m2!3d37.7888907!4d-122.3981003"}
-
   
