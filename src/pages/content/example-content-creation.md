@@ -4,6 +4,6 @@ description: CMS Made
 ---
 ## Example
 
-This page was created through the CMS for testing
+This page was created through the CMS.
 
 [Back Home](/)

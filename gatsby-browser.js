@@ -7,4 +7,3 @@
 // You can delete this file if you're not using it
 import "./src/css/app.css"
 import "./src/css/matrix.css"
-import './node_modules/bootstrap/dist/css/bootstrap.min.css'

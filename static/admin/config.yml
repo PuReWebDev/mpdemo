@@ -7,19 +7,13 @@ backend:
     - admin
     - editor
 
-media_folder: /public/image
-media_folder_relative: true
-public_folder: /public/image
-site_url: localhost:8000
+media_folder: uploads/img
+public_folder: /img
 
 collections:
 - name: "mainPages"
   label: "Main Pages and Settings"
-  media_library:
-    config:
-      multiple: true
-
-  create: false
+  create: true
   files:
   - file: "src/pages/index.md"
     label: "Home"
@@ -50,18 +44,14 @@ collections:
       name: "header_slide"
       widget: "list"
       fields:
-        - {label: Header Link, name: header_link, widget: string, default: "Panel Link"}
-        - {label: Header Link Key, name: header_link_key, widget: string}
-        - {label: Header Image, name: header_image, widget: image}
+        - {label: Panel Link, name: panel_link, widget: string, default: "Panel Link"}
+        - {label: Panel Image, name: panel_image, widget: image, default: "/img/gamecap.jpg"}
     - label: "Footer Slide"
-      name: "footer_slide"
+      name: "header_slide"
       widget: "list"
       fields:
-        - {label: Footer Logo, name: footer_logo, widget: image}
-        - {label: Footer Image, name: footer_image, widget: image}
-        - {label: Footer Content, name: footer_content, widget: markdown}
-        - {label: Footer Color, name: footer_color, widget: string}
-        - {label: Signature, name: footer_signature, widget: string}    
+        - {label: Footer Text, name: footer_text, widget: markdown, default: "Panel Link"}
+        - {label: Footer Image, name: footer_image, widget: image, default: "/img/gamecap.jpg"}    
   - file: "src/pages/config.md"
     label: "Global Settings"
     name: "config"
@@ -84,129 +74,13 @@ collections:
           { label: URL, name: url, widget: string },
           ]
       }
-- name: "about"
-  label: "About Us"
-  identifier_field: title
-  files:
-  - file: "src/pages/about/index.md"
-    label: "About Us Page"
-    name: "about_us"
-    fields:
-      - { label: "Template Key", name: "templateKey",widget: "hidden", default: "about-page" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Quote", name: "quote", widget: "text" }
-      - { label: "Signature", name: "signature_widget", widget: "string" }
-      - { label: "Left Panel Title", name: "left_panel_title", widget: "string" }
-      - { label: "Left Panel Content", name: "left_panel_content", widget: "string" }
-      - label: "Right Panel Row"
-        name: "right_panel_row"
-        widget: "list"
-        fields:
-          - label: "Right Panel Stats"
-            name: "right_panel_stats"
-            widget: "list"
-            fields: 
-                - { label: "Panel Number", name: "panel_number", valueType: "int", min: 1, step: 1 }
-                - { label: "Panel Label" , name: "panel_label", widget: "string" }
-                - { label: "Green Plus", name: "green_plus", widget: "boolean", default: false }
 - name: "content"
   label: "Content Pages"
   folder: "src/pages/content"
-  identifier_field: title
   create: true
   fields:
   - { label: "Title", name: "title", widget: "string" }
   - { label: "Description", name: "description", widget: "text" }
   - { label: "Body", name: "body", widget: "markdown" }
-- name: "portfolio"
-  label: "Portfolio"
-  identifier_field: title
-  files:
-  - file: "src/pages/portfolio/index.md"
-    label: "Portfolio Page"
-    name: "portfolio"
-    fields:
-    - {
-      label: "Template Key",
-      name: "templateKey",
-      widget: "hidden",
-      default: "portfolio-page",
-    }
-    - label: "Title"
-      name: "title"
-      widget: "string"
-    - label: "Panel"
-      name: "panel"
-      widget: "list"
-      fields:
-        - {label: Panel Title, name: panel_title, widget: string, default: "Panel Title"}
-        - {label: "Menu Key", name: "menu_key", widget: "string"}
-        - label: "Panel Images"
-          name: "panel_images"
-          widget: "list"
-          fields:
-          - {label: Panel Image, name: panel_image, widget: image}
-          - {label: Panel Alt, name: panel_image_alt, widget: image}
-          - {label: Panel Description, name: panel_description, widget: string}
-- name: "team"
-  label: "Team"
-  identifier_field: title
-  files:
-  - file: "src/pages/team/index.md"
-    label: "Team Page"
-    name: "team_page"
-    fields:
-    - {
-      label: "Template Key",
-      name: "templateKey",
-      widget: "hidden",
-      default: "team-page",
-    }
-    - label: "Title"
-      name: "title"
-      widget: "string"
-    - label: "Sub Title"
-      name: "sub_title"
-      widget: "string"
-    - label: "Team"
-      name: "team"
-      widget: "list"
-      fields:
-        - {label: Team Name, name: team_name, widget: string, default: "INVESTMENT TEAM"}
-        - label: "Team Member"
-          name: "team_member"
-          widget: "list"
-          fields:
-          - {label: Team Members Name, name: team_member_name, widget: string, default: "John Doe"}
-          - {label: Team Member Image, name: team_member_image, widget: image}
-- name: "contact"
-  label: "Contact"
-  identifier_field: title
-  files:
-  - file: "src/pages/contact/index.md"
-    label: "Contact Page"
-    name: "contact"
-    fields:
-    - {
-      label: "Template Key",
-      name: "templateKey",
-      widget: "hidden",
-      default: "contact-page",
-    }
-    - label: "Title"
-      name: "title"
-      widget: "string"
-    - label: "Sub Title"
-      name: "sub_title"
-      widget: "string"
-    - label: "Contact Panel"
-      name: "contact_panel"
-      widget: "list"
-      fields: 
-          - {label: Panel Image, name: panel_image, widget: image }   
-          - {label: Title, name: title, widget: string, default: "Default Title"}
-          - {label: Display Address, name: display_address, widget: string, default: "535 Mission St. Suite 2600 San Francisco, CA 94105"}
-          - {label: Phone Number, name: phone_number, widget: string, default: "default_key"}
-          - {label: Email, name: email, widget: string, default: "email@default.com"}
-          - {label: Directions Link, name: directions_link, widget: string, default: "https://www.google.com/maps/place/535+Mission+St+%232600,+San+Francisco,+CA+94105/@37.7888907,-122.400289,17z/data=!3m1!4b1!4m5!3m4!1s0x8085806325b00825:0x7808b0fc4ef4d3a6!8m2!3d37.7888907!4d-122.3981003"}
+
   

@@ -1,9 +1,9 @@
 import { rhythm, scale } from "../utils/typography"
-import { Navigation } from "./navigation"
+import { Navigation } from './navigation'
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { Container } from "reactstrap"
+import { Container } from 'reactstrap'
 
 class Layout extends React.Component {
   render() {
@@ -12,7 +12,6 @@ class Layout extends React.Component {
     const blogPath = `${__PATH_PREFIX__}/blog/`
     let header
 
-    console.log(this.props, "this layout props")
     if (location.pathname === rootPath || location.pathname === blogPath) {
       header = (
         <h1
@@ -60,17 +59,14 @@ class Layout extends React.Component {
         <Container fluid style={{ padding: 0 }}>
           <header>{header}</header>
           <main>
-            <Navigation auth={false} />
-            {children}
+                  <Navigation auth={false} />                
+                  {children}
           </main>
-          <Footer>
-            © {new Date().getFullYear()}
-            {` `}
-            <a href="http://www.matrixpartners.com.cn/">
-              MATRIX PARTNERS CHINA
-            </a>
-            | <a href="http://www.matrixpartners.in/">MATRIX PARTNERS INDIA</a>
-          </Footer>
+        <Footer>
+          © {new Date().getFullYear()}
+          {` `}
+          <a href="http://www.matrixpartners.com.cn/">MATRIX PARTNERS CHINA</a>| <a href="http://www.matrixpartners.in/">MATRIX PARTNERS INDIA</a>
+        </Footer>
         </Container>
       </Wrapper>
     )

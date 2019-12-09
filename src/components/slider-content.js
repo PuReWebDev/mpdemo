@@ -1,53 +1,84 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { Carousel, CarouselItem, CarouselControl, Row, Col } from "reactstrap"
-import { Fade } from "react-reveal"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    Row,
+    Col
+  } from 'reactstrap';
+import { Fade } from 'react-reveal'
+export const SliderContent = ({
+    images,
+    colors,
+    hasArrows, fullScreen, subMenu, parallax
+}) => {
 
-export const SliderContent = props => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [animating, setAnimating] = useState(false)
-  const { parallax, hasArrows, content } = props
-  const images = props.content.map(c => c.footer_image)
-  /*const subMenu = props.content.map(s => ({
-      logo: s.footer_logo,
-      color: s.footer_color,
-      content: s.footer_content,
-    }))*/
 
-  const next = () => {
-    if (animating) return
-    const nextIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1
-    setActiveIndex(nextIndex)
-  }
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+  
+    const next = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
+      setActiveIndex(nextIndex);
+    }
+  
+    const previous = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1;
+      setActiveIndex(nextIndex);
+    }
+  
+    const goToIndex = (newIndex) => {
+      if (animating) return;
+      setActiveIndex(newIndex);
+    }
+  
+    const renderSubmenu = () => {
+      const {logo, title, content, signiture, index, color} = subMenu[activeIndex]
+      return (
+          <div style={{ 
+              padding: '15%',
+              backgroundColor: color,
+              height:'100%'
+          }}
+          >
+                <p style={{ color: 'white' }} onClick={() => goToIndex(index)}>
+                    <img src={logo} alt={logo} style={{
+                      height: '100px',
+                      width: '100px'
+                    }} />
+                    <hr style={{ color: 'white' }} />
+                    {title}
+                    <hr style={{ color: 'white' }} />
+                    {content}
+                    <small>{signiture}</small>
+                 </p>
+            }
+          </div>
+        )
+    }
+  
+    const updateSubmenu = () => {
+        setAnimating(true)
+        //Update active button index :D
+    }
 
-  const previous = () => {
-    if (animating) return
-    const nextIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1
-    setActiveIndex(nextIndex)
-  }
-
-  const goToIndex = newIndex => {
-    if (animating) return
-    setActiveIndex(newIndex)
-  }
-
-  const updateSubmenu = () => {
-    setAnimating(true)
-    //Update active button index :D
-  }
-
-  const slides = [images || []].map((image, i) => {
-    return (
-      <CarouselItem
-        className="h-75"
-        tag="div"
-        key={i}
-        onExiting={updateSubmenu}
-        onExited={() => setAnimating(false)}
-      >
-        <Fade ssrFadeout>
-          <Row style={{ padding: 0 }}>
-            {/* subMenu.length > 0 ? (
+    console.log("slider images",images)
+  
+    const slides = images.map((image, i) => {
+      return (
+        <CarouselItem
+          className="h-75"
+          tag="div"
+          key={i}
+          onExiting={updateSubmenu}
+          onExited={() => setAnimating(false)}
+        >
+                  <Fade ssrFadeout >
+            <Row style={{padding: 0}}>
+            { subMenu.length > 0 ? (
             <Col className="padding-none">
             {renderSubmenu()}
             {hasArrows ? (
@@ -56,69 +87,59 @@ export const SliderContent = props => {
               <CarouselControl className="carousel-control-next-bottom" direction="next" directionText="Next" onClickHandler={next} />
           </>
         ) : null }
-            </Col>)  : null */}
+            </Col>)  : null }
             <Col className="padding-none">
-              <img
-                style={{
-                  filter: "brightness(40%)",
-                  width: "100%",
-                  height: "100%",
-                  padding: 0,
-                }}
-                src={image}
-              />
+            <img style={{ filter: 'brightness(40%)', width: '100%', height: '100%', padding: 0}} src={image} />
             </Col>
-          </Row>
+        </Row>
         </Fade>
-      </CarouselItem>
-    )
-  })
 
-  return (
-    <div>
-      <style>
-        {`.matrix-carousel {
+        </CarouselItem>
+      );
+    });
+
+    return (
+      <div>
+        <style>
+          {
+            `.matrix-carousel {
                 max-width: 100%;
                 top: 0;
                 background: black;
                 min-height: '700px';  
-              }`}
-      </style>
-      <Fade ssrFadeout>
-        <Carousel
-          style={
-            parallax
-              ? {
-                  backgroundAttachment: "fixed",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                }
-              : {}
+              }`
           }
+        </style>
+        <Fade ssrFadeout>
+        <Carousel
+          style={parallax ? {  backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
+          } : {}}
           className="matrix-carousel"
           activeIndex={activeIndex}
           next={next}
           previous={previous}
         >
-          {slides}
+        {slides}
         </Carousel>
-      </Fade>
-    </div>
-  )
+        </Fade>
+      </div>
+    );
 }
 
 SliderContent.propTypes = {
-  colors: PropTypes.array,
-  images: PropTypes.array.isRequired,
-  delay: PropTypes.number,
-  hasArrows: PropTypes.bool,
+        colors: PropTypes.array,
+    images: PropTypes.array.isRequired,
+    delay: PropTypes.number,
+    hasArrows: PropTypes.bool
 }
 
 SliderContent.defaultProps = {
-  colors: null,
-  delay: 3000,
-  hasArrows: true,
-  fullScreen: false,
-  subMenu: [],
+    colors: null,
+    delay: 3000,
+    hasArrows: true,
+    fullScreen: false,
+    subMenu: []
 }

@@ -1,18 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Matrix Partners`,
-    description: ``,
+    title: "Matrix Partners",
+    siteUrl: `http://localhost.com`,
     author: `@renvrant`,
+    description: "Main site of Matrix Partners",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // Including in your Gatsby plugins will transform any paths in your frontmatter
-    `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/uploads/img`,
+        path: `${__dirname}/src/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -25,7 +24,7 @@ module.exports = {
           // This entry template will switch the page template based on
           // a frontmatter value provided in the CMS, allowing users to
           // choose different template layouts.
-          default: require.resolve(`${__dirname}/src/page-templates/cms-entry.template.js`)
+          default: require.resolve(`${__dirname}/src/page-templates/home-page.template.js`)
         },
       }
     },
