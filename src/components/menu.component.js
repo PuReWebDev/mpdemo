@@ -21,7 +21,6 @@ export const Menu = () => (
   <StaticQuery
     query={query}
     render={data => {
-      console.log("logging menu", data)
       const menu = safelyGetSiteConfig(data.sitePage).menu_nav || []
       return (
         <ul>

@@ -1,185 +1,599 @@
-.carousel-control-next-bottom {
-    height: 20%;
-    top: 80%;
+.text-black {
+  color: #010101;
 }
 
-.padding-none {
-    padding: 0
+.text-white {
+  color: white;
 }
 
-.h-50-header {
-    background-image: url(https://www.matrixpartners.com/wp-content/uploads/2017/11/contact-header-compressed.jpg);
-    text-align: center;
-    padding: 15%
+.grayscale {
+  position: relative;
 }
 
-.h-50-grayscale {
+.grayscale:before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  margin-bottom: 0;
+}
+
+.top-75 {
+  top: 75% !important;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+/*Override hover effect.*/
+.bg-white:hover {
+  background-color: white !important;
+}
+
+.image-text-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.image-text-container img {
+  margin-bottom: 0
+}
+
+.image-text-bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.image-text-top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.image-text-top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.image-text-bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.image-text-centered {
+  position: absolute;
+  left: 0;
+  text-align:center;
+  top: 35%;
+  width: 100%
+}
+
+.cover-image {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: 50%;
-    color: white;
-    -webkit-filter: brightness(50%); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
-    filter: brightness(50%); /* Supported in Chrome 76 */
+    filter: grayscale(100%);
+}
+
+.carousel-control-next-bottom {
+  height: 20%;
+  top: 80%;
+  left: 15vh;
+}
+
+.padding-none {
+  padding: 0 !important;
+}
+
+.margin-none {
+  margin: 0 !important;
+}
+
+.h-50-header {
+  padding: 15%;
+}
+
+.h-50-header .overlay-text:after {
+  filter: none;
+}
+
+.h-50-grayscale {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  color: white;
+  -webkit-filter: brightness(
+    50%
+  ); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  filter: brightness(50%); /* Supported in Chrome 76 */
 }
 
 .h-50-grayscale h1 {
-    -webkit-filter: brightness(100%) !important;
-    filter: brightness(100%) !important;
-    color: white;
+  -webkit-filter: brightness(100%) !important;
+  filter: brightness(100%) !important;
+  color: white;
 }
 
 .overlay-full {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.2s;
-    background-position: 50%;
-    opacity: 0.95;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  background-position: 50%;
+  opacity: 0.95;
+  z-index: 1;
 }
 
 .panel-card {
-    align-items:center;
-backface-visibility:hidden;
+  align-items: center;
+  backface-visibility: hidden;
+  border-bottom-color: rgb(0, 0, 0);
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(0, 0, 0);
+  border-left-style: none;
+  border-left-width: 0px;
+  border-right-color: rgb(0, 0, 0);
+  border-right-style: none;
+  border-right-width: 0px;
+  border-top-color: rgb(0, 0, 0);
+  border-top-style: none;
+  border-top-width: 0px;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  height: 400px;
+  justify-content: center;
+  left: 0px;
+  line-height: 16px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  background-color: #141619 !important;
+  transition: box-shadow 400ms, background-color 400ms;
+}
+
+.panel-1:hover {
+  background-color: #3c56fb !important;
+  box-shadow: 0 0 10px 5px;
+}
+
+.panel-2:hover {
+  background-color: #143047 !important;
+  box-shadow: 0 0 10px 5px;
+}
+
+.panel-3:hover {
+  background-color: #000000 !important;
+  box-shadow: 0 0 10px 5px;
+}
+
+.panel-4:hover {
+  background-color: #5d717d !important;
+  box-shadow: 0 0 10px 5px;
+}
+
+.panel-5:hover {
+  background-color: #5de2a1 !important;
+  box-shadow: 0 0 10px 5px;
+}
+
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px);
+}
+
+.full-screen-background {
+}
+
+.overlay-image {
+  position: relative;
+  height: 100vh;
+}
+
+.overlay-image:before {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlay-text {
+  position: relative;
+  border-radius: 20px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.overlay-text {
+  position: relative;
+  padding: 30px;
+  margin: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.overlay-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+
+.overlay-text:hover:after {
+  -webkit-filter: brightness(100%);
+}
+
+.team-header {
+  background-image: url(https://www.matrixpartners.com/wp-content/uploads/2017/11/team-header-desktop-compressed.jpg);
+  padding: 25vh;
+  text-align: center;
+  background-position: "center";
+  background-size: cover;
+  color: white;
+  filter: brightness(50%);
+}
+
+.full-outer-text {
+  background-color: #000000;
+  min-height: 500px;
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.full-inner-text {
+  color: #ffffff;
+  padding: 10% 30% 25% 0;
+}
+
+.carousel,
+.item,
+.active {
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.hr-bar {
+
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.flipcard {
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flipcard-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.flipcard-face-back {
+  transform: rotateY(180deg);
+}
+
+.flipcard-is-flipped {
+  transform: rotateY(180deg);
+}
+
+.team-member-container {
+  background: #141618;
+}
+
+.team-member-row {
+  padding: 30px;
+}
+
+/*Team member cards*/
+.team-member-card {
+  position: relative;
+
+}
+
+.team-member-card img {
+
+}
+
+.team-member-card p {
+  position: absolute;
+  top: 66%;
+  right: 25%;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 32px;
+}
+
+.contact-header {
+  text-align: center;
+  margin: 10% 10% 15% 10%;
+}
+
+.contact-panel {
+
+}
+
+.contact-panel-inner {
+  padding: 16%;
+}
+
+.contact-panel-inner p {
+    display: block;
+    font-family: "akzidenz-grotesk",sans-serif;
+    font-weight: 300;
+    color: #5D717D;
+}
+
+.contact-panel-inner-button {
+
+}
+
+.contact-panel-inner-title {
+    color: #143047;
+    font-size: 40px;
+}
+
+.contact-panel-right {
+
+}
+
+.contact-panel-right-image {
+  animation-duration:0.5s;
+background-image:url(https://www.matrixpartners.com/wp-content/uploads/2017/06/san-francisco@2x.jpg);
+background-size:cover;
 border-bottom-color:rgb(0, 0, 0);
-border-bottom-style:none;
-border-bottom-width:0px;
-border-image-outset:0px;
 border-image-repeat:stretch;
-border-image-slice:100%;
-border-image-source:none;
-border-image-width:1;
 border-left-color:rgb(0, 0, 0);
-border-left-style:none;
-border-left-width:0px;
-border-right-color:rgb(0, 0, 0);
-border-right-style:none;
-border-right-width:0px;
-border-top-color:rgb(0, 0, 0);
-border-top-style:none;
-border-top-width:0px;
 box-sizing:border-box;
 color:rgb(0, 0, 0);
-display:flex;
-flex-direction:column;
-font-family:sans-serif;
-font-size:16px;
-font-stretch:100%;
-font-style:normal;
-font-variant-caps:normal;
-font-variant-east-asian:normal;
-font-variant-ligatures:normal;
-font-variant-numeric:normal;
+display:block;
 font-weight:400;
-height:400px;
-justify-content:center;
-left:0px;
+height:355.016px;
 line-height:16px;
+position:absolute;
+text-size-adjust:100%;
+top:0px;
+transform:matrix(1, 0, 0, 1, -90, 40);
+transition-delay:0.2s;
+transition-duration:1s;
+transition-property:all;
+transition-timing-function:ease;
+width:75%;
+left: 20%;
+z-index:1;
+-webkit-font-smoothing:antialiased;
+}
+
+.contact-panel-right-map {
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  animation-name:photoCardHoverRightIn;
+  background-color:rgb(20, 48, 71);
+  background-size:contain;
+  border-bottom-color:rgb(0, 0, 0);
+  border-bottom-style:none;
+  border-bottom-width:0px;
+  border-image-outset:0px;
+  border-image-repeat:stretch;
+  border-image-slice:100%;
+  border-image-source:none;
+  border-image-width:1;
+  border-left-color:rgb(0, 0, 0);
+  border-left-style:none;
+  border-left-width:0px;
+  border-right-color:rgb(0, 0, 0);
+  border-right-style:none;
+  border-right-width:0px;
+  border-top-color:rgb(0, 0, 0);
+  border-top-style:none;
+  border-top-width:0px;
+  box-sizing:border-box;
+  color:rgb(0, 0, 0);
+  display:block;
+  font-family:sans-serif;
+  font-size:16px;
+  font-stretch:100%;
+  font-style:normal;
+  font-variant-caps:normal;
+  font-variant-east-asian:normal;
+  font-variant-ligatures:normal;
+  font-variant-numeric:normal;
+  font-weight:400;
+  height:355.016px;
+  left:0px;
+  line-height:16px;
+  margin-bottom:0px;
+  margin-left:0px;
+  margin-right:0px;
+  margin-top:0px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0px;
+  padding-left:0px;
+  padding-right:0px;
+  padding-top:0px;
+  position:relative;
+  text-size-adjust:100%;
+  top:0px;
+  transform:matrix(1, 0, 0, 1, 0, -40);
+  transition-delay:0.4s;
+  transition-duration:1s;
+  transition-property:all;
+  transition-timing-function:ease;
+  width:480px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.about-container {
+  padding: 15%;
+  background: #6c757d;
+}
+
+.about-blockqoute {
+  background-attachment:scroll;
+  background-clip:border-box;
+  background-color:rgba(0, 0, 0, 0);
+  background-image:url(https://www.matrixpartners.com/wp-content/themes/matrix-prpl/assets/img/quote@2x.png);
+  background-origin:padding-box;
+  background-size:75px;
+  color:rgb(255, 255, 255);
+  display:block;
+  font-family:akzidenz-grotesk-condensed, sans-serif;
+  font-size:40px;
+  font-weight:400;
+  height:237px;
+  letter-spacing:0.2px;
+  line-height:48px;
+  margin-block-end:30px;
+  margin-block-start:15px;
+  margin-bottom:30px;
+  margin-inline-end:0px;
+  margin-inline-start:0px;
+  margin-left:0px;
+  margin-right:0px;
+  margin-top:15px;
+  max-width:750px;
+  padding-bottom:0px;
+  padding-left:55px;
+  padding-right:0px;
+  padding-top:45px;
+  quotes:none;
+}
+
+.about-blockquote-source {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.about-left {
+  line-height:16px;
 margin-bottom:0px;
 margin-left:0px;
 margin-right:0px;
 margin-top:0px;
-background-color: #141619;
-transition: box-shadow 400ms, background-color 400ms;
-
+padding-bottom:60px;
+padding-left:0px;
+padding-right:0px;
+padding-top:160px;
 }
 
-.panel-1:hover {
-    background-color: #3C56FB;
-    box-shadow: 0 0 10px 5px;
+.plus {
+    line-height: 1;
+    color: #5DE2A1;
+    vertical-align: top;
+    display: inline;
 }
 
-.panel-2:hover {
-    background-color: #143047;
-    box-shadow: 0 0 10px 5px;
-}
-
-.panel-3:hover {
-    background-color: #000000;
-    box-shadow: 0 0 10px 5px;
-}
-
-.panel-4:hover {
-    background-color: #5D717D;
-    box-shadow: 0 0 10px 5px;
-}
-
-.panel-5:hover {
-    background-color: #5DE2A1;
-    box-shadow: 0 0 10px 5px;
-}
-
-
-.parallax {
-    perspective: 1px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  .parallax__layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .parallax__layer--base {
-    transform: translateZ(0);
-  }
-  .parallax__layer--back {
-    transform: translateZ(-1px);
-  }
-
-.overlay-image {
-    position: relative;
-    height: 100vh;
-}
-
-.overlay-image:before{
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.7);
-}
-.overlay-text {
-    position: relative;
-    border-radius: 20px;
-    height: 150px;
-    overflow: hidden;
-}
-
-.overlay-text {
-    position: relative;
-    padding: 30px;
-    margin: 15px;
-    border-radius: 20px;
-    overflow: hidden;
-  }
+.row-stats {
   
-  .overlay-text:after {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: -1;
+}
 
-  }
+.footer-container {
+  padding: 80px 0 30px 0;
+  font-size: 14px;
+  line-height: 2.3;
+  letter-spacing: 0.5px;
+  opacity: 1 !important;
+  background: white;
+}
+
+.footer-container .footer-left {
+
+}
+
+.footer-container .footer-right {
   
-  .overlay-text:hover:after {
-    -webkit-filter: brightness(100%);
-  }
+}
 
-  .team-header {
-    background-image: url(https://www.matrixpartners.com/wp-content/uploads/2017/11/team-header-desktop-compressed.jpg);
-    padding: 25vh;
-    text-align: center;
-    background-position: 'center';
-    background-size: cover;
-    color:white;
-    filter: brightness(50%)
-  }
+.dropdown-menu .dropdown-menu-right {
+  background: black
+}
+
+.dropdown-menu .nav-link {
+  color: white
+}
+
+.markdown-content {
+  margin: 0;padding: 0;
+}
+
+.left-content-menu {
+  height: 100%;
+  padding-top: 50%;
+}
+
+.left-content-menu img {
+  left: 0;
+  display: block;
+}
