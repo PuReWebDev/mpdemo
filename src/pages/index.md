@@ -15,7 +15,7 @@ header_slide:
     header_link: commit personally
     header_link_key: second_panel
   - header_image: 'https://www.matrixpartners.com/wp-content/uploads/2017/02/lever@2x.jpg'
-    header_link: support with experience
+    header_link: support with experience gtest
     header_link_key: third_panel
   - header_image: 'https://www.matrixpartners.com/wp-content/uploads/2017/02/cloudbees@2x.jpg'
     header_link: amplify intrinsic talent test
