@@ -10,8 +10,6 @@ menu_nav:
     url: 'https://viewpoints.matrixpartners.com/'
   - text: Contact
     url: /contact
-  - text: Austins Page
-    url: /doesntexist
 dropdowns:
   - dropdown_items:
       - text: Matrix China
