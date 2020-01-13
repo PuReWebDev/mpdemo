@@ -202,7 +202,9 @@ panel:
           services.
         panel_image: /assets/fedex_light-2x.png
         panel_image_alt: /assets/fedex_dark-2x.png
-      - panel_description: Panel description
+      - panel_description: >-
+          GOAT is a mobile sneaker marketplace to discover, buy and sell rare
+          sneakers.
         panel_image: >-
           https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat@2x_light.png
         panel_image_alt: >-
