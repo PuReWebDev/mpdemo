@@ -30,5 +30,10 @@ footer_slide:
     footer_logo: >-
       https://www.matrixpartners.com/wp-content/uploads/2017/06/oculus_light@2x.png
     footer_signature: Acquired by Facebook
+  - footer_color: '#FFFFFF'
+    footer_content: Test
+    footer_image: /assets/example-teammate.jpg
+    footer_logo: /assets/profile-pic.png
+    footer_signature: Test
 ---
 
