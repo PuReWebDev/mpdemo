@@ -150,6 +150,79 @@ panel:
           https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat@2x_light.png
         panel_image_alt: >-
           https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat_dark@2x.png
+      - panel_description: Airvana offers mobile broadband network infrastructure systems.
+        panel_image: /assets/airvana_light-2x.png
+        panel_image_alt: /assets/airvana_dark-2x.png
+      - panel_description: >-
+          Alteon Websystems provides network infrastructure software and
+          products.
+        panel_image: /assets/alteon_light-2x.png
+        panel_image_alt: /assets/alteon_dark-2x.png
+      - panel_description: >-
+          Ambarella develops low-power, HD and Ultra HD video compression and
+          image processing solutions.
+        panel_image: /assets/ambarella_light-2x.png
+        panel_image_alt: /assets/ambarella_dark-2x.png
+      - panel_description: >-
+          Apple designs, manufactures, and markets consumer electronics,
+          personal computers, and software.
+        panel_image: /assets/apple_light-2x.png
+        panel_image_alt: /assets/apple_dark-2x.png
+      - panel_description: >-
+          ArrowPoint built intelligent Web switches for managing e-commerce
+          transactions and the delivery of content in real time.
+        panel_image: /assets/arrowpoint_wt.png
+        panel_image_alt: /assets/arrowpoint_bk.png
+      - panel_description: >-
+          Aruba Networks provides access management, network infrastructure and
+          mobility application solutions.
+        panel_image: /assets/aruba_light-2x.png
+        panel_image_alt: /assets/aruba_dark-2x.png
+      - panel_description: Atria Software provides design engineering services.
+        panel_image: /assets/atria_wt.png
+        panel_image_alt: /assets/atria_bk.png
+      - panel_description: >-
+          Care.com is an online web portal for finding caregiver services for
+          child care, senior care, housekeeping, pet care, and more.
+        panel_image: /assets/care-white.png
+        panel_image_alt: /assets/care-black.png
+      - panel_description: Cascade Communications develops and manufactures network switches.
+        panel_image: /assets/cascade_light-2x.png
+        panel_image_alt: /assets/cascade_dark-2x.png
+      - panel_description: >-
+          Cheetah Mobile develops mobile applications and provides internet
+          security software.
+        panel_image: /assets/cheetah_light-2x.png
+        panel_image_alt: /assets/cheetah_dark-2x.png
+      - panel_description: >-
+          Copper Mountain supplies DSL communications products to
+          telecommunications service providers.
+        panel_image: /assets/coppermtn_wt.png
+        panel_image_alt: /assets/coppermtn_bk.png
+      - panel_description: The Echo Nest is a music intelligence company for developers.
+        panel_image: /assets/echonest_light-2x.png
+        panel_image_alt: /assets/echonest_dark-2x.png
+      - panel_description: >-
+          FedEx provides worldwide transportation, e-commerce and business
+          services.
+        panel_image: /assets/fedex_light-2x.png
+        panel_image_alt: /assets/fedex_dark-2x.png
+      - panel_description: Grand Junction makes Fast Ethernet desktop switching products.
+        panel_image: /assets/grandjunction_wt.png
+        panel_image_alt: /assets/grandjunction_bk.png
+      - panel_description: JBoss is an open-source Java application server program.
+        panel_image: /assets/jb_light-2x.png
+        panel_image_alt: /assets/jb_dark-2x.png
+      - panel_description: >-
+          Lam Research makes equipment and services for semiconductor
+          manufacturing.
+        panel_image: /assets/lam_light-2x.png
+        panel_image_alt: /assets/lam_dark-2x.png
+      - panel_description: >-
+          Netezza designs data warehouse appliances and advanced analytics
+          applications.
+        panel_image: /assets/nezzeta_light-2x.png
+        panel_image_alt: /assets/nezzeta_dark-2x.png
     panel_title: Historic Investments
 ---
 
