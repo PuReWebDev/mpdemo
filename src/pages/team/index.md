@@ -27,5 +27,13 @@ team:
       - team_member_image: /assets/jake-jolis-1-768x768.jpg
         team_member_name: Jake Jolis
     team_name: INVESTMENT TEAM
+  - team_member:
+      - team_member_image: /assets/phyllis-doherty-large-2x-768x923.jpg
+        team_member_name: Phyllis Doherty
+      - team_member_image: /assets/xrp_3423_16m_xl-768x768.jpg
+        team_member_name: Erin Mauro
+      - team_member_image: /assets/scott-khanna-large-2x-768x923.jpg
+        team_member_name: Scott Khanna
+    team_name: ADMINISTRATIVE TEAM
 ---
 
