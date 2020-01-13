@@ -145,11 +145,6 @@ panel:
     panel_title: Recent Investments
   - menu_key: historical
     panel_images:
-      - panel_description: Panel description
-        panel_image: >-
-          https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat@2x_light.png
-        panel_image_alt: >-
-          https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat_dark@2x.png
       - panel_description: Airvana offers mobile broadband network infrastructure systems.
         panel_image: /assets/airvana_light-2x.png
         panel_image_alt: /assets/airvana_dark-2x.png
@@ -207,6 +202,11 @@ panel:
           services.
         panel_image: /assets/fedex_light-2x.png
         panel_image_alt: /assets/fedex_dark-2x.png
+      - panel_description: Panel description
+        panel_image: >-
+          https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat@2x_light.png
+        panel_image_alt: >-
+          https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat_dark@2x.png
       - panel_description: Grand Junction makes Fast Ethernet desktop switching products.
         panel_image: /assets/grandjunction_wt.png
         panel_image_alt: /assets/grandjunction_bk.png
@@ -223,6 +223,54 @@ panel:
           applications.
         panel_image: /assets/nezzeta_light-2x.png
         panel_image_alt: /assets/nezzeta_dark-2x.png
+      - panel_description: >-
+          Openwave Systems delivers context-aware messaging solutions that
+          enable communication service providers to deliver smarter services.
+        panel_image: /assets/openwave_light-2x.png
+        panel_image_alt: /assets/openwave_dark-2x.png
+      - panel_description: >-
+          Qihoo 360 offers internet and mobile security products and online
+          advertising.
+        panel_image: /assets/360_light-2x.png
+        panel_image_alt: /assets/360_dark-2x.png
+      - panel_description: SanDisk delivers flash storage solutions.
+        panel_image: /assets/sandisk_light-2x.png
+        panel_image_alt: /assets/sandisk_dark-2x.png
+      - panel_description: Sonus delivers SIP based communications and SBC solutions.
+        panel_image: /assets/sonus_wt-1.png
+        panel_image_alt: /assets/sonus_bk-1.png
+      - panel_description: >-
+          Starent Networks provides infrastructure hardware and software
+          products and services.
+        panel_image: /assets/starent_light-2x.png
+        panel_image_alt: /assets/starent_dark-2x.png
+      - panel_description: Sycamore Networks develops intelligent optical networking software.
+        panel_image: /assets/sycamore-networks_light-2x.png
+        panel_image_alt: /assets/sycamore-networks_dark-2x.png
+      - panel_description: >-
+          Tealeaf provides digital customer experience management and behavior
+          analysis solutions.
+        panel_image: /assets/tealeaf_light-2x.png
+        panel_image_alt: /assets/tealeaf_dark-2x.png
+      - panel_description: Tivoli provides intelligent infrastructure management solutions.
+        panel_image: /assets/tivoli_wt.png
+        panel_image_alt: /assets/tivoli_bk.png
+      - panel_description: >-
+          Turnstone Systems develops solutions for the deployment and
+          maintenance of copper local loop services.
+        panel_image: /assets/turnstone1_wt.png
+        panel_image_alt: /assets/turnstone1_bk.png
+      - panel_description: >-
+          Veritas was a developer of software products for storage management
+          and data backup.
+        panel_image: /assets/veritas_light-2x.png
+        panel_image_alt: /assets/veritas_dark-2x.png
+      - panel_description: WatchGuard Technologies provides unified threat management solutions.
+        panel_image: /assets/watchguard_light-2x-1.png
+        panel_image_alt: /assets/watchguard_light-2x.png
+      - panel_description: Xilinx provides programmable logistics solutions.
+        panel_image: /assets/xilinix_light-2x.png
+        panel_image_alt: /assets/xilinix_dark-2x.png
     panel_title: Historic Investments
 ---
 
