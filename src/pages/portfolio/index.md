@@ -52,6 +52,6 @@ panel:
           https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat@2x_light.png
         panel_image_alt: >-
           https://www.matrixpartners.com/wp-content/uploads/2017/06/Goat_dark@2x.png
-    panel_title: Panel Title
+    panel_title: Historic Investments
 ---
 
