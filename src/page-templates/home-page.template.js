@@ -6,7 +6,7 @@ import {
 } from "../cms"
 import { Slider, SliderContent } from "../components"
 //import { Link } from "gatsby"
-import { Row, Container } from "reactstrap"
+import { Row, Container, Col } from "reactstrap"
 import { Fade } from "react-reveal"
 
 export const HomePageTemplate = props => {
@@ -32,12 +32,20 @@ export const HomePageTemplate = props => {
     return footer_slide.map(fslide => fslide)
   }
 
+  /**
+   * Animate text one at a time
+   * @param {string} text
+   * @return {JSX} 
+   */
+  const animateText = text => (text.split(' ').map(word => (
+    <Fade><span style={{ display: 'inline' }}>{word} </span></Fade>
+  )))
+
   return (
     <article style={{ width: "100%" }}>
       <SEO title="Home Page" />
       <Container fluid className="padding-none margin-none">
-        <Fade>
-          <div class="blackout-overlay" style={{opacity: 0.425091}}></div>
+          <div className="blackout-overlay" style={{opacity: 0.425091}}></div>
           <div className="blackout-section">
           <Slider
             subMenu={renderSliderMenu()}
@@ -45,11 +53,17 @@ export const HomePageTemplate = props => {
             images={renderSlides()}
           />
           </div>
-        </Fade>
           <div className="blackout-section-neighbor" style={{ height: '100vh', background: 'black' }}>
-          <Row className="full-outer-text">
-            <h2 className="full-inner-text">{props.content_section_one}</h2>
-          </Row>
+          <div className="valign--center">
+              <div className="container container--md in-view-tracker is-in-view">
+                  <div className="line">&nbsp;</div>
+                      <h2 className="color--light">
+                          <span className="split-text-animate">
+                              {animateText(props.content_section_one)}
+                          </span>
+                      </h2>
+                </div>
+          </div>
           </div>
           <div className="text-center" style={{ padding: "10% 0", height: '25vh', background: 'white' }}>
             {renderContentPanel()}

@@ -4,6 +4,7 @@ import HomePage from "./home-page.template"
 import ContactPage from "./contact-page.template"
 import PortfolioPage from "./portfolio-page.template"
 import TeamPage from './team-page.template'
+import TeamMemberPage from './team-member-page.template'
 import AboutPage from './about-page.template'
 import DefaultPage from "./default-page.template"
 import NotFoundPage from "./not-found.template"
@@ -18,6 +19,7 @@ const componentTemplateMap = {
   "contact-page": ContactPage,
   "portfolio-page": PortfolioPage,
   "team-page": TeamPage,
+  "team-member-page": TeamMemberPage,
   "about-page": AboutPage,
   "hidden-page": NotFoundPage,
 }

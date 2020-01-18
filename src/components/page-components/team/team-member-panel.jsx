@@ -1,9 +1,10 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 
-export const TeamMemberPanel = ({member}) => {
+export const TeamMemberPanel = (member) => {
     
     function renderTeamMemberCards(teammate) {
+
         return teammate.map(team => {
             return (
             <Col xs={12} sm={3} md={3} lg={3} > 
@@ -22,9 +23,9 @@ export const TeamMemberPanel = ({member}) => {
 
     return (
         <>
-            <h3>{member.team_name}</h3>
+            <h3>{member.group}</h3>
             <Row className="team-member-row">
-                {renderTeamMemberCards(member.team_member)}
+                {renderTeamMemberCards(member.member)}
             </Row>
         </>
     )

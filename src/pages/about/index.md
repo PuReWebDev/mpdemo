@@ -1,6 +1,6 @@
 ---
 templateKey: about-page
-title: About Page.
+title: About Page
 quote: >-
   We are an entrepreneur’s most valuable partner over a long period of time. We
   engage early. We wear well. We are steady. We are the best firm for you on day

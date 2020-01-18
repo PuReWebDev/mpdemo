@@ -52,7 +52,7 @@ export const Footer = () => {
         return (
         <div className="footer-container">
           <div className="menu-footer-links-left-container">
-            <ul classNAme="menu-footer-links-left">
+            <ul className="menu-footer-links-left">
             {footer_nav_left.map(nav_left => {
                 return (
                 <a

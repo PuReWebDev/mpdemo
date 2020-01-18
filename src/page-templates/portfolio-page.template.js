@@ -1,11 +1,9 @@
 import React, { useState } from "react"
 
-import { Heading, SEO } from "../components"
+import { SEO } from "../components"
 import Layout from "../components/layout"
-import { StaticQuery, graphql } from "gatsby"
 import { Fade } from "react-reveal"
 import classnames from "classnames"
-import { ParallaxSingle } from "../components/parallax"
 //import { RenderMarkdown } from "../core"
 import ReactCardFlip from "react-card-flip"
 import {

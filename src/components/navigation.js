@@ -30,6 +30,7 @@ export const Navigation = () => {
   const openMenu = () => {
     updateHover(true)
   }
+  
   const closeMenu = () => {
     updateHover(false)
   }

@@ -39,7 +39,6 @@ export const SliderContent = props => {
 
   const renderSubmenu = () => {
     return subMenu.map(menu => {
-      console.log("render submenu" , menu)
       return(
         <div className="left-content-menu portfolio__slide-info">
             <img style={{height: 60, width: 60, margin: 'auto', display: 'block'}} className="portfolio__logo portfolio__logo icon-adjust" src={menu.logo} />
@@ -63,11 +62,11 @@ export const SliderContent = props => {
             <Col xs={12} sm={6} md={4} lg={4} className="padding-none">
             {renderSubmenu()}
             {hasArrows ? (
-          <>
+            <>
               <CarouselControl className="carousel-control-next-bottom top-75 swiper__button swiper__button--prev" direction="prev" directionText="Previous" onClickHandler={previous} />
               <CarouselControl className="carousel-control-next-bottom top-75 swiper__button swiper__button--next" direction="next" directionText="Next" onClickHandler={next} />
-          </>
-        ) : null }
+            </>
+            ) : null }
             </Col>)  : null }
             <Col xs={0} sm={8} md={8} lg={8} className="padding-none">
               <img

@@ -1,6 +1,3 @@
-#backend:
-#  name: github
-#  repo: PuReWebDev/mpdemo # Path to your GitHub repository
 backend:
   name: git-gateway
   accept_roles: #optional - accepts all users if left out
@@ -161,15 +158,50 @@ collections:
                 - { label: "Panel Number", name: "panel_number", valueType: "int", min: 1, step: 1 }
                 - { label: "Panel Label" , name: "panel_label", widget: "string" }
                 - { label: "Green Plus", name: "green_plus", widget: "boolean", default: false }
-- name: "content"
-  label: "Content Pages"
-  folder: "src/pages/content"
+- name: "teammembers"
+  label: "Team Pages"
+  folder: "src/pages/member"
   identifier_field: title
   create: true
   fields:
-  - { label: "Title", name: "title", widget: "string" }
-  - { label: "Description", name: "description", widget: "text" }
-  - { label: "Body", name: "body", widget: "markdown" }
+    - {
+      label: "Template Key",
+      name: "templateKey",
+      widget: "hidden",
+      default: "team-member-page",
+    }
+    - {label: Title, name: title, widget: string }
+    - {label: Team Members Position, name: team_position, widget: string, default: "partner"}
+    - {label: Team Members Name, name: team_member_name, widget: string, default: "John Doe"}
+    - {label: Team Member Image, name: team_member_image, widget: image }
+    - {label: Facebook, name: facebook_link, widget: string }
+    - {label: Monster, name: monster_link, widget: string }
+    - {label: Linkedin, name: linkedin_link, widget: string }
+    - label: "Current Projects"
+      name: "current_projects"
+      widget: "list"
+      fields: 
+          - {label: Project Name, name: project_name, widget: string }
+          - {label: Project Link, name: project_link, widget: string } 
+    - label: "Previous Projects"
+      name: "previous_projects"
+      widget: "list"
+      fields: 
+          - {label: Project Name, name: project_name, widget: string }
+          - {label: Project Link, name: project_link, widget: string }   
+    - {label: Bio, name: bio, widget: text }
+    - label: "Experience"
+      name: "experience"
+      widget: "list"
+      fields: 
+          - {label: Position Location, name: position_location, widget: string }
+          - {label: Position Title, name: position_title, widget: string }
+    - label: "Education"
+      name: "education"
+      widget: "list"
+      fields: 
+          - {label: School Name, name: school_name, widget: string }
+          - {label: Degree Earned, name: degree, widget: string }
 - name: "portfolio"
   label: "Portfolio"
   identifier_field: title
@@ -197,40 +229,26 @@ collections:
           name: "panel_images"
           widget: "list"
           fields:
+          - {label: Title, name: panel_title, widget: string}
           - {label: Panel Image, name: panel_image, widget: image}
           - {label: Panel Alt, name: panel_image_alt, widget: image}
           - {label: Panel Description, name: panel_description, widget: string}
-- name: "team"
-  label: "Team"
-  identifier_field: title
+- name: teamlist
+  label: Team
+  slug: "/team"
   files:
   - file: "src/pages/team/index.md"
-    label: "Team Page"
-    name: "team_page"
-    fields:
+    label: Team Page Configuration
+    name: teamlist_member
+    fields: 
     - {
       label: "Template Key",
       name: "templateKey",
       widget: "hidden",
       default: "team-page",
     }
-    - label: "Title"
-      name: "title"
-      widget: "string"
-    - label: "Sub Title"
-      name: "sub_title"
-      widget: "string"
-    - label: "Team"
-      name: "team"
-      widget: "list"
-      fields:
-        - {label: Team Name, name: team_name, widget: string, default: "INVESTMENT TEAM"}
-        - label: "Team Member"
-          name: "team_member"
-          widget: "list"
-          fields:
-          - {label: Team Members Name, name: team_member_name, widget: string, default: "John Doe"}
-          - {label: Team Member Image, name: team_member_image, widget: image}
+    - { label: Team Member List Title, name: team_member_title, widget: string } 
+    - { label: Team Member List Sub Title, name: team_member_subtitle_title, widget: string } 
 - name: "contact"
   label: "Contact"
   identifier_field: title

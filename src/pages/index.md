@@ -1,6 +1,6 @@
 ---
 templateKey: home-page
-title: Home Page
+title: Home Page.
 content_section_one: We are a close-knit team of company builders and former founders.
 panel_content:
   - panel_content_link: SUPPORTING FOUNDERS FOR FORTY YEARS.
