@@ -66,6 +66,19 @@ export const AboutPageTemplate = props => {
                <div className="col-2-section">
                   <div className="column-2">
                           {generateRightPanelRows(props.right_panel_row)}
+                            {/*
+                          <div className="container">
+            <div className="icon-line animate-svg"><img src="/wp-content/themes/matrix-prpl/assets/svg/Line_1.svg"/></div>
+            <div className="column animate-svg">
+               <img src="/wp-content/themes/matrix-prpl/assets/svg/SeriesA_animated.svg"/>
+               <p className="description">Series A</p>
+            </div>
+            <div className="icon-line animate-svg"><img src="/wp-content/themes/matrix-prpl/assets/svg/Line_1.svg"/></div>
+            <div className="column animate-svg">
+               <img src="/wp-content/themes/matrix-prpl/assets/svg/SeriesB_animated.svg"/>
+               <p className="description">Series B</p>
+                            </div>
+                            </div>*/}
                    </div>
               </div>
             </div>

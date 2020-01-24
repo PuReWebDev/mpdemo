@@ -158,8 +158,25 @@ collections:
                 - { label: "Panel Number", name: "panel_number", valueType: "int", min: 1, step: 1 }
                 - { label: "Panel Label" , name: "panel_label", widget: "string" }
                 - { label: "Green Plus", name: "green_plus", widget: "boolean", default: false }
+- name: teamlist
+  label: Team
+  slug: "/team"
+  files:
+  - file: "src/pages/team/index.md"
+    label: Team Page Configuration
+    name: teamlist_member
+    fields: 
+    - {
+      label: "Template Key",
+      name: "templateKey",
+      widget: "hidden",
+      default: "team-page",
+    }
+    - { label: Team Member List Title, name: team_member_title, widget: string } 
+    - { label: Team Member List Sub Title, name: team_member_subtitle_title, widget: string } 
 - name: "teammembers"
   label: "Team Pages"
+  slug: "/team/{title}"
   folder: "src/pages/member"
   identifier_field: title
   create: true
@@ -171,12 +188,17 @@ collections:
       default: "team-member-page",
     }
     - {label: Title, name: title, widget: string }
+    - {label: Team Member Image, name: team_member_image, widget: image }
+    - { label: 'Order', name: 'number', widget: 'number', min: 1 }
     - {label: Team Members Position, name: team_position, widget: string, default: "partner"}
     - {label: Team Members Name, name: team_member_name, widget: string, default: "John Doe"}
-    - {label: Team Member Image, name: team_member_image, widget: image }
-    - {label: Facebook, name: facebook_link, widget: string }
+    - { label: 'Team Member Position', name: 'team_member_position', widget: 'select', options: ['INVESTMENT TEAM', 'ADMINISTRATIVE TEAM'] }
+    - { label: 'Title', name: 'title', widget: 'string' }
+    - { label: 'Boolean', name: 'boolean', widget: 'boolean', default: true }
+    - {label: Twitter, name: twitter_link, widget: string }
     - {label: Monster, name: monster_link, widget: string }
     - {label: Linkedin, name: linkedin_link, widget: string }
+    - {label: Quora, name: quora_link, widget: string }
     - label: "Current Projects"
       name: "current_projects"
       widget: "list"
@@ -232,23 +254,8 @@ collections:
           - {label: Title, name: panel_title, widget: string}
           - {label: Panel Image, name: panel_image, widget: image}
           - {label: Panel Alt, name: panel_image_alt, widget: image}
+          - {label: Partnership Outcome, name: panel_partnership_outcome, widget: string}
           - {label: Panel Description, name: panel_description, widget: string}
-- name: teamlist
-  label: Team
-  slug: "/team"
-  files:
-  - file: "src/pages/team/index.md"
-    label: Team Page Configuration
-    name: teamlist_member
-    fields: 
-    - {
-      label: "Template Key",
-      name: "templateKey",
-      widget: "hidden",
-      default: "team-page",
-    }
-    - { label: Team Member List Title, name: team_member_title, widget: string } 
-    - { label: Team Member List Sub Title, name: team_member_subtitle_title, widget: string } 
 - name: "contact"
   label: "Contact"
   identifier_field: title

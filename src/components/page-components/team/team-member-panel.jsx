@@ -2,9 +2,10 @@ import React from 'react'
 import { Row, Col } from 'reactstrap'
 
 export const TeamMemberPanel = (member) => {
+    console.log("team member props", member)
     
     function renderTeamMemberCards(teammate) {
-
+        console.log(teammate, "whats the deal yo?")
         return teammate.map(team => {
             return (
             <Col xs={12} sm={3} md={3} lg={3} > 

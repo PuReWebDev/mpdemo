@@ -2068,10 +2068,6 @@ body {
 body.mobile-nav-active, body.modal-open {
     overflow-y: hidden !important;
 }
-img {
-    max-width: 100%;
-    display: block;
-}
 h1 {
     font-family: "akzidenz-grotesk-condensed", sans-serif;
     font-size: 32px;

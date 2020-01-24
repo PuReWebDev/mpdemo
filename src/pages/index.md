@@ -30,29 +30,5 @@ footer_slide:
     footer_logo: >-
       https://www.matrixpartners.com/wp-content/uploads/2017/06/oculus_light@2x.png
     footer_signature: Acquired by Facebook
-  - footer_color: '#FFFFFF'
-    footer_content: |-
-      MIKKEL & MORTEN//ZENDESK
-
-      Zendesk provides a SaaS help desk software suite.
-    footer_image: /assets/zendesk_12m_rgb-1024x576.jpg
-    footer_logo: /assets/zendesk_light-2x.png
-    footer_signature: IPO
-  - footer_color: '#FFFFFF'
-    footer_content: |-
-      RAJ, BENNY, CHRISTIAN & MEHRDAD.//ACACIA
-
-      Acacia Communications delivers high-speed communications technology
-    footer_image: /assets/acacia-2x-1024x789.jpg
-    footer_logo: /assets/acacia_light-2x.png
-    footer_signature: IPO
-  - footer_color: '#292828'
-    footer_content: |-
-      DHARMESH & BRIAN//HUBSPOT
-
-      HubSpot offers an inbound marketing and sales platform.
-    footer_image: /assets/hubspot-3_6m_rgb-1024x683.jpg
-    footer_logo: /assets/hubspot_light-2x.png
-    footer_signature: IPO in 2016
 ---
 

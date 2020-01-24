@@ -39,6 +39,7 @@ export const SliderContent = props => {
 
   const renderSubmenu = () => {
     return subMenu.map(menu => {
+      console.log("render submenu" , menu)
       return(
         <div className="left-content-menu portfolio__slide-info">
             <img style={{height: 60, width: 60, margin: 'auto', display: 'block'}} className="portfolio__logo portfolio__logo icon-adjust" src={menu.logo} />
